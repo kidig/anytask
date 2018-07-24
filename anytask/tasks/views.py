@@ -52,10 +52,14 @@ def task_create_page(request, course_id):
     not_seminar_tasks = Task.objects.filter(~Q(type=Task().TYPE_SEMINAR)).filter(course=course)
     has_seminar = course.issue_status_system.statuses.filter(tag=IssueStatus.STATUS_SEMINAR).count()
 
+    task_types = Task.TASK_TYPE_CHOICES
+    if not has_seminar:
+        task_types = filter(lambda x: not x[0] == Task.TYPE_SEMINAR, task_types)
+
     context = {
         'is_create': True,
         'course': course,
-        'task_types': Task().TASK_TYPE_CHOICES if has_seminar else Task().TASK_TYPE_CHOICES[:-1],
+        'task_types': task_types,
         'seminar_tasks': seminar_tasks,
         'not_seminar_tasks': not_seminar_tasks,
         'contest_integrated': course.contest_integrated,
@@ -143,11 +147,17 @@ def task_edit_page(request, task_id):
     seminar_tasks = Task.objects.filter(type=Task().TYPE_SEMINAR).filter(course=task.course)
     not_seminar_tasks = Task.objects.filter(~Q(type=Task().TYPE_SEMINAR)).filter(course=task.course)
 
+    task_types = task.TASK_TYPE_CHOICES
+    if task.type == task.TYPE_SEMINAR:
+        task_types = filter(lambda x: not x[0] == task.TYPE_FULL, task_types)
+    else:
+        task_types = filter(lambda x: not x[0] == task.TYPE_SEMINAR, task_types)
+
     context = {
         'is_create': False,
         'course': task.course,
         'task': task,
-        'task_types': task.TASK_TYPE_CHOICES[-1:] if task.type == task.TYPE_SEMINAR else task.TASK_TYPE_CHOICES[:-1],
+        'task_types': task_types,
         'groups_required': groups_required,
         'show_help_msg_task_group': True if groups_required else False,
         'seminar_tasks': seminar_tasks,

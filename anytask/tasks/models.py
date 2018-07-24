@@ -60,11 +60,13 @@ class Task(models.Model):
     TYPE_SIMPLE = 'Only mark'
     TYPE_SEMINAR = 'Seminar'
     TYPE_MATERIAL = 'Material'
+    TYPE_IPYNB = 'Jupyter Notebook'
     TASK_TYPE_CHOICES = (
         (TYPE_FULL, _('s_obsuzhdeniem')),
         (TYPE_SIMPLE, _('tolko_ocenka')),
         (TYPE_MATERIAL, _('material')),
         (TYPE_SEMINAR, _('seminar')),
+        (TYPE_IPYNB, _('jupyter notebook'))
     )
     type = models.CharField(db_index=False, max_length=128, choices=TASK_TYPE_CHOICES, default=TYPE_FULL)
 

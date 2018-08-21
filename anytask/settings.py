@@ -48,6 +48,7 @@ LOGGING = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
 # local overrides (optional)
 
 _settings_local = os.path.join(os.path.dirname(__file__), 'settings_local.py')

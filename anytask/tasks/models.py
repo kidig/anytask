@@ -87,6 +87,8 @@ class Task(models.Model):
 
     score_after_deadline = models.BooleanField(db_index=False, null=False, blank=False, default=True)
 
+    nb_assignment_name = models.CharField(max_length=255, null=True, blank=True)
+
     def __unicode__(self):
         return unicode(self.title)
 

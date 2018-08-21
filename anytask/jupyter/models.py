@@ -1,0 +1,44 @@
+import logging
+
+from django.utils.text import slugify
+from requests.exceptions import HTTPError
+
+from django.db.models.signals import post_save, post_delete
+from anytask.tasks.models import Task
+
+from .client import create_assignment, delete_assignment
+
+logger = logging.getLogger(__name__)
+
+
+def get_assignment_name(instance):
+    return '{}-{}'.format(instance.pk, slugify(instance.short_title))
+
+
+def create_nbgrader_assignment(sender, instance, created, **kwargs):
+    logger.info('create nbgrader assignment for task: %s', instance)
+
+    if not instance.type == Task.TYPE_IPYNB or not created:
+        return
+
+    try:
+        assignment = create_assignment(name=instance.nb_assignment_name)
+        logger.info('nbgrader assignment "%s" has been created: task_id=%d', instance.nb_assignment_name, instance.pk)
+    except HTTPError:
+        pass
+
+
+def delete_nbgrader_assignment(sender, instance, **kwargs):
+    logger.info('delete nbgrader assignment for task: %s', instance)
+
+    if not instance.type == Task.TYPE_IPYNB:
+        return
+
+    try:
+        delete_assignment(name=instance.nb_assignment_name)
+    except HTTPError:
+        pass
+
+
+post_save.connect(create_nbgrader_assignment, sender=Task)
+post_delete.connect(delete_nbgrader_assignment, sender=Task)

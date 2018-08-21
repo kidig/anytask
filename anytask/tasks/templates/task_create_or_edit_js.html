@@ -128,6 +128,8 @@
         $('#task_edit_type').change(function () {
             var $task_edit_type = $('#task_edit_type');
 
+            $("#nb_assignment_name_body").hide();
+
             if ($task_edit_type.val() === 'All') {
                 $('#contest_rb_body').collapse('show');
                 $("#task_edit_contest_integrated").show();
@@ -179,6 +181,9 @@
                 $("#accepted_after_deadline_body").collapse('hide');
                 $("#parent_body").hide();
                 $("#children_body").show();
+            }
+            else if ($task_edit_type.val() === 'Jupyter Notebook') {
+                $("#nb_assignment_name_body").show();
             }
         });
 
@@ -291,6 +296,9 @@
                 },
                 'task_group_id[]': {
                     required_with_disabled: true
+                },
+                'nb_assignment_name': {
+                    required: true
                 }
             },
 
@@ -328,6 +336,9 @@
                 },
                 'task_group_id[]': {
                     required_with_disabled: "{% trans 'neobhodimo_vybrat_gruppu' %}"
+                },
+                nb_assignment_name: {
+                    required: "{% trans 'assignment_name_is_required' %}"
                 }
             },
 

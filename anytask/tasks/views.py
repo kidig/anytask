@@ -217,6 +217,8 @@ def get_task_params(request, check_score_after_deadline=False):
     hidden_task = 'hidden_task' in request.POST
     task_text = request.POST.get('task_text', '').strip()
 
+    nb_assignment_name = request.POST.get('nb_assignment_name', '')
+
     return {'attrs': {
         'updated_by': user,
         'title': task_title,
@@ -235,7 +237,8 @@ def get_task_params(request, check_score_after_deadline=False):
         'accepted_after_contest_ok': accepted_after_contest_ok,
         'score_after_deadline': score_after_deadline,
         'is_hidden': hidden_task,
-        'task_text': task_text
+        'task_text': task_text,
+        'nb_assignment_name': nb_assignment_name,
     },
         'children': children,
         'groups': task_groups

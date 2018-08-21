@@ -11,12 +11,12 @@ def api_request(method, endpoint, **kwargs):
 
 
 def create_assignment(name):
-    r = api_request('post', '/assignments', data=dict(name=name))
+    r = api_request('post', '/assignments', json=dict(name=name))
     r.raise_for_status()
     return True
 
 
 def delete_assignment(name):
-    r = api_request('delete', '/assignments', data=dict(name=name))
+    r = api_request('delete', '/assignments', json=dict(name=name))
     r.raise_for_status()
     return True

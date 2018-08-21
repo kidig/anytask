@@ -1878,7 +1878,7 @@ msgstr "Будет отображаться в таблице с оценкам�
 
 #: tasks/templates/task_create.html:76
 msgid "nb_assignment_name"
-msgstr "Название в nbgrader"
+msgstr "Название задачи в jupyter"
 
 #: tasks/templates/task_create.html:115 tasks/templates/task_edit.html:310
 msgid "podzadachi"

@@ -323,7 +323,12 @@
                                                     {% endif %}
                                                 </div>
                                                 <div style="width: 15%">
-                                                    {% if task.type == task.TYPE_FULL and not user_is_teacher %}
+                                                    {% if task.type in task.TYPE_FULL and not user_is_teacher %}
+                                                        <a style="width: 100%"
+                                                           class="btn btn-sm btn-primary pull-xs-right"
+                                                           href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>
+                                                    {% endif %}
+                                                    {% if task.type in task.TYPE_IPYNB and not user_is_teacher %}
                                                         <a style="width: 100%"
                                                            class="btn btn-sm btn-primary pull-xs-right"
                                                            href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>

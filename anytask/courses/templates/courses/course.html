@@ -524,6 +524,11 @@
                                                            class="btn btn-sm btn-primary pull-xs-right"
                                                            href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>
                                                     {% endif %}
+                                                    {% if task.type == task.TYPE_IPYNB and not user_is_teacher %}
+                                                        <a style="width: 100%"
+                                                           class="btn btn-sm btn-primary pull-xs-right"
+                                                           href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                             <div id="collapse_{{ task.id }}" class="collapse">

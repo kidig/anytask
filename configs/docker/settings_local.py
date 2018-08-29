@@ -20,3 +20,6 @@ DATABASES = {
 
 JUPYTER_NBGRADER_API_URL = 'http://localhost:8089'
 JUPYTER_NBGRADER_AUTH_TOKEN = 'your-nbgradersk-token'
+# JUPYTER_NBGRADER_DISABLED = True
+
+JUPYTERHUB_URL = 'http://localhost'

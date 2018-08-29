@@ -211,6 +211,10 @@
                                                             <a style="width: 100%"
                                                                class="btn btn-sm btn-primary pull-xs-right"
                                                                href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>
+                                                        {% elif task.type == task.TYPE_IPYNB and not user_is_teacher %}
+                                                            <a style="width: 100%"
+                                                               class="btn btn-sm btn-primary pull-xs-right"
+                                                               href="/issue/get_or_create/{{ task.id }}/{{ user.id }}">{% trans "sdat" %}</a>
                                                         {% elif task.type == task.TYPE_SEMINAR %}
                                                             <a style="width: 100%"
                                                                class="btn btn-sm btn-primary pull-xs-right"
@@ -286,6 +290,12 @@
                                                                        class="btn btn-sm btn-primary pull-xs-right"
                                                                        href="{% if task.task.children.count != 0 %}
                                                             {{ course.id }}/seminar/{{ task.task.id }}{% endif %}">
+                                                                        {% trans "perejti" %}</a>
+                                                                {% elif task.task.type == task.task.TYPE_IPYNB %}
+                                                                    <a style="width: 100%"
+                                                                        class="btn btn-sm btn-primary pull-xs-right"
+                                                                        {% if not user.get_profile.ya_passport_login %}disabled{% endif %}
+                                                                        href="{{ jupyterhub_url }}/user/{{ user.get_profile.ya_passport_login }}/tree/source/{{ task.task.nb_assignment_name }}">
                                                                         {% trans "perejti" %}</a>
                                                                 {% endif %}
                                                             </div>
@@ -393,6 +403,7 @@
                                                                    href="{% if task.task.children.count != 0 %}
                                                             {{ course.id }}/seminar/{{ task.task.id }}{% endif %}">
                                                                     {% trans "perejti" %}</a>
+                                                            {
                                                             {% endif %}
                                                         </div>
                                                     </div>

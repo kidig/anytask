@@ -38,6 +38,14 @@
     <div class="collapse" id="task-text">
         {{ issue.task|get_description:LANGUAGE_CODE|safe }}
     </div>
+    {% if issue.task.type == issue.task.TYPE_IPYNB %}
+    <div>
+        {% blocktrans with jupyterhub_t=jupyterhub_url assignment_name_t=issue.task.nb_assignment_name %}
+            <p>For solving the task you need to go to <a href="{{ jupyterhub_url }}" target="_blank">JupyterHub</a>.</p>
+            <p>Open Assignments tab and fetch the '{{ assignment_name_t }}'</p>
+        {% endblocktrans %}
+    </div>
+    {% endif %}
 </div>
 <div class="card card-block">
     <h5 class="card-title">{% trans "obsuzhdenie_zadachi" %}</h5>

@@ -1,6 +1,7 @@
 import logging
 
 from django.utils.text import slugify
+from django.conf import settings
 from requests.exceptions import HTTPError
 
 from django.db.models.signals import post_save, post_delete
@@ -36,5 +37,6 @@ def delete_nbgrader_assignment(sender, instance, **kwargs):
     logger.debug('DELETED: %r', info)
 
 
-post_save.connect(create_nbgrader_assignment, sender=Task)
-post_delete.connect(delete_nbgrader_assignment, sender=Task)
+if not getattr(settings, 'JUPYTER_NBGRADER_DISABLED', False):
+    post_save.connect(create_nbgrader_assignment, sender=Task)
+    post_delete.connect(delete_nbgrader_assignment, sender=Task)

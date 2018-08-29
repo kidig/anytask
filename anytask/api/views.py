@@ -9,9 +9,11 @@ from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequ
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
+from unidecode import unidecode
 
 from courses.models import Course
-from issues.models import Issue
+from issues.model_issue_field import IssueField
+from issues.models import Issue, Event, File
 
 ISSUE_FILTER = {
     'student': 'student__username',
@@ -190,6 +192,18 @@ def get_issue(request, issue):
                         content_type="application/json")
 
 
+def upload_issue_files(request, issue):
+    if not request.FILES:
+        return
+
+    field = get_object_or_404(IssueField, name='file')
+    event = Event.objects.create(issue_id=issue.id, field=field)
+
+    for name, file in request.FILES.iteritems():
+        file.name = unidecode(file.name)
+        File.objects.create(file=file, event=event)
+
+
 def post_issue(request, issue):
     user = request.user
 
@@ -214,6 +228,8 @@ def post_issue(request, issue):
 
     lang = request.POST.get('lang', settings.API_LANGUAGE_CODE)
     ret = unpack_issue(get_object_or_404(Issue, id=issue.id), add_events=True, request=request, lang=lang)
+
+    upload_issue_files(request, issue)
 
     return HttpResponse(json.dumps(ret),
                         content_type="application/json")

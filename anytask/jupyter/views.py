@@ -3,9 +3,11 @@ import logging
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
+from unidecode import unidecode
 
-from anytask.api.views import login_required_basic_auth
-from anytask.issues.models import Issue
+from api.views import login_required_basic_auth
+from issues.models import Issue, Event, File
+from issues.model_issue_field import IssueField
 from tasks.models import Task
 
 from users.models import UserProfile
@@ -47,5 +49,17 @@ def update_jupyter_task(request):
             issue.set_byname('mark', float(score))
         except ValueError:
             return HttpResponse('Wrong score: {}'.format(score), status=400)
+
+    if request.FILES:
+        try:
+            field = IssueField.objects.get(name='file')
+        except IssueField.DoesNotExist:
+            return HttpResponse('No issue field', status=404)
+
+        event = Event.objects.create(issue_id=issue.id, author=user, field=field)
+
+        for name, file in request.FILES.iteritems():
+            file.name = unidecode(file.name)
+            File.objects.create(file=file, event=event)
 
     return HttpResponse(status=200)

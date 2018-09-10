@@ -51,6 +51,7 @@ def update_jupyter_task(request):
             return HttpResponse('Wrong score: {}'.format(score), status=400)
 
     if request.FILES:
+        logger.debug('FILES: %r', request.FILES)
         try:
             field = IssueField.objects.get(name='file')
         except IssueField.DoesNotExist:
@@ -58,7 +59,7 @@ def update_jupyter_task(request):
 
         event = Event.objects.create(issue_id=issue.id, author=user, field=field)
 
-        for name, file in request.FILES.iteritems():
+        for file in request.FILES.getlist('files'):
             file.name = unidecode(file.name)
             File.objects.create(file=file, event=event)
 

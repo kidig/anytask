@@ -1969,7 +1969,7 @@ msgstr "Название задачи в jupyter"
 
 #: tasks/templates/task_create_or_edit_js.html:347
 msgid "assignment name cannot contains spaces"
-msgstr ""
+msgstr "В названии задачи допускается использовать только латинские буквы, цифры и знаки \"_\", \"-\"."
 
 #: tasks/templates/task_edit.html:188
 msgid "vybor_grupp_zavisit_ot_zadach"

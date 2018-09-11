@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-29 21:41+0300\n"
+"POT-Creation-Date: 2018-09-11 09:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr "Курс"
 msgid "student"
 msgstr "Студент"
 
-#: anyrb/common.py:90 issues/templates/issues/history.html:51
+#: anyrb/common.py:90 issues/templates/issues/history.html:60
 msgid "obsuzhdenie_zadachi"
 msgstr "Обсуждение задачи"
 
@@ -522,7 +522,7 @@ msgstr "Удалённую задачу нельзя восстановить. �
 #: issues/templates/issues/info.html:136 issues/templates/issues/info.html:156
 #: tasks/management/commands/send_task_notifications.py:82
 #: tasks/templates/contest_import.html:129 tasks/templates/task_create.html:128
-#: tasks/templates/task_create_or_edit_js.html:460
+#: tasks/templates/task_create_or_edit_js.html:466
 #: tasks/templates/task_edit.html:202 tasks/templates/task_edit.html.py:417
 #: tasks/templates/task_import.html:118 tasks/templates/task_import_js.html:418
 msgid "data_sdachi"
@@ -759,9 +759,9 @@ msgstr "При получении данных произошла ошибка."
 #: lessons/templates/lesson_create_or_edit_js.html:120
 #: mail/templates/mail.html:207 staff/templates/staff.html:172
 #: staff/templates/staff.html.py:195 staff/templates/staff.html:218
-#: tasks/templates/task_create_or_edit_js.html:235
-#: tasks/templates/task_create_or_edit_js.html:253
-#: tasks/templates/task_create_or_edit_js.html:264
+#: tasks/templates/task_create_or_edit_js.html:239
+#: tasks/templates/task_create_or_edit_js.html:257
+#: tasks/templates/task_create_or_edit_js.html:268
 #: tasks/templates/task_edit.html:80 tasks/templates/task_edit.html.py:89
 #: users/templates/status_history.html:139
 #: users/templates/user_profile.html:642 users/templates/user_profile.html:672
@@ -787,7 +787,7 @@ msgstr "Данные сохранены."
 #: courses/templates/courses/settings_js.html:276
 #: lessons/templates/lesson_create_or_edit_js.html:111
 #: staff/templates/staff_js.html:304 staff/templates/staff_js.html.py:350
-#: tasks/templates/task_create_or_edit_js.html:256
+#: tasks/templates/task_create_or_edit_js.html:260
 #: users/templates/user_settings_js.html:64
 msgid "oshibka_pri_sohranenii"
 msgstr "Произошла ошибка. Попробуйте сохранить ещё раз."
@@ -850,7 +850,7 @@ msgstr "Количество инвайтов должно быть целым �
 
 #: invites/templates/generate.html:46
 #: lessons/templates/lesson_create_or_edit_js.html:171
-#: tasks/templates/task_create_or_edit_js.html:338
+#: tasks/templates/task_create_or_edit_js.html:343
 #: tasks/templates/task_import_js.html:246
 msgid "neobhodimo_vybrat_gruppu"
 msgstr "Выберите группу."
@@ -1082,41 +1082,50 @@ msgstr "Отправить"
 msgid "vyberite_kompiljator"
 msgstr "Выберите компилятор"
 
-#: issues/templates/issues/history.html:43
+#: issues/templates/issues/history.html:44
 #, python-format
 msgid ""
 "\n"
-"            <p>Для решения задачи вам необходимо перейти в <a href="
+"            <p>Для решения данной задачи вам нужно перейти в <a href="
 "\"%(jupyterhub_url)s\" target=\"_blank\">JupyterHub</a>.</p>\n"
-"            <p>Открыть вкладку <b>Assignments</b> и нажать кнопку <b>Fetch</b> для задания '%(assignment_name_t)s'</"
+"            <p>На вкладке Assignments нажать Fetch для задания '%(assignment_name_t)s'</"
 "p>\n"
 "        "
 msgstr ""
 
-#: issues/templates/issues/history.html:56
+#: issues/templates/issues/history.html:51
+msgid ""
+"\n"
+"        <p>Перед решением этой задачи вам необходимо привязать свой Яндекс аккаунт"
+".</p>\n"
+"        <p>Откройте <a href=\"/user/settings\">Настройки</a> и в блоке Привязка аккаунтов, авторизуйтесь через Яндекс.</p>\n"
+"        "
+msgstr ""
+
+#: issues/templates/issues/history.html:65
 msgid "predydushie_soobshenija"
 msgstr "Предыдущие сообщения"
 
-#: issues/templates/issues/history.html:62
-#: issues/templates/issues/history.html:72
+#: issues/templates/issues/history.html:71
+#: issues/templates/issues/history.html:81
 msgid "srok_sdachi_istek"
 msgstr "Срок сдачи задания истек."
 
-#: issues/templates/issues/history.html:62
-#: issues/templates/issues/history.html:72
+#: issues/templates/issues/history.html:71
+#: issues/templates/issues/history.html:81
 msgid "soobshenija_budut_vydeljatsja"
 msgstr ""
 "Сообщения, отправленные студентом после срока сдачи, будут выделены красным."
 
-#: issues/templates/issues/history.html:111
+#: issues/templates/issues/history.html:120
 msgid "otkryt"
 msgstr "Открыть"
 
-#: issues/templates/issues/history.html:112
+#: issues/templates/issues/history.html:121
 msgid "skachat"
 msgstr "Скачать"
 
-#: issues/templates/issues/history.html:140
+#: issues/templates/issues/history.html:149
 #: users/templates/user_profile.html:379
 msgid "zdes_nichego_net"
 msgstr "Пока здесь ничего нет =("
@@ -1269,8 +1278,8 @@ msgid "raspisanie_sohraneno_uspeshno"
 msgstr "Занятие сохранено успешно."
 
 #: lessons/templates/lesson_create_or_edit_js.html:168
-#: tasks/templates/task_create_or_edit_js.html:325
-#: tasks/templates/task_create_or_edit_js.html:328
+#: tasks/templates/task_create_or_edit_js.html:330
+#: tasks/templates/task_create_or_edit_js.html:333
 #: tasks/templates/task_import_js.html:229
 msgid "ne_tak_mnogo"
 msgstr "Слишком длинное название задачи."
@@ -1311,10 +1320,10 @@ msgstr "Выбрано несколько дней"
 #: lessons/templates/lesson_create_or_edit_js.html:341
 #: lessons/templates/lesson_create_or_edit_js.html:354
 #: lessons/templates/lesson_create_or_edit_js.html:368
-#: tasks/templates/task_create_or_edit_js.html:357
-#: tasks/templates/task_create_or_edit_js.html:358
-#: tasks/templates/task_create_or_edit_js.html:371
-#: tasks/templates/task_create_or_edit_js.html:385
+#: tasks/templates/task_create_or_edit_js.html:363
+#: tasks/templates/task_create_or_edit_js.html:364
+#: tasks/templates/task_create_or_edit_js.html:377
+#: tasks/templates/task_create_or_edit_js.html:391
 #: tasks/templates/task_import_js.html:328
 #: tasks/templates/task_import_js.html:329
 #: tasks/templates/task_import_js.html:342
@@ -1324,15 +1333,15 @@ msgstr "Для всех групп"
 
 #: lessons/templates/lesson_create_or_edit_js.html:351
 #: lessons/templates/lesson_create_or_edit_js.html:365
-#: tasks/templates/task_create_or_edit_js.html:368
-#: tasks/templates/task_create_or_edit_js.html:382
+#: tasks/templates/task_create_or_edit_js.html:374
+#: tasks/templates/task_create_or_edit_js.html:388
 #: tasks/templates/task_import_js.html:339
 #: tasks/templates/task_import_js.html:353
 msgid "ne_vybrano_ni_odnoj_gruppy"
 msgstr "Не выбрано ни одной группы"
 
 #: lessons/templates/lesson_create_or_edit_js.html:371
-#: tasks/templates/task_create_or_edit_js.html:388
+#: tasks/templates/task_create_or_edit_js.html:394
 #: tasks/templates/task_import_js.html:359
 msgid "vybrano_neskolko_grupp"
 msgstr "Выбрано несколько групп"
@@ -1912,51 +1921,55 @@ msgstr "Уведомить студентов о создании задачи"
 msgid "skryt_zadachu"
 msgstr "Скрыть задачу"
 
-#: tasks/templates/task_create_or_edit_js.html:238
-#: tasks/templates/task_create_or_edit_js.html:267
+#: tasks/templates/task_create_or_edit_js.html:242
+#: tasks/templates/task_create_or_edit_js.html:271
 msgid "zadacha_sohranena_uspeshno"
 msgstr "Задача сохранена."
 
-#: tasks/templates/task_create_or_edit_js.html:318
+#: tasks/templates/task_create_or_edit_js.html:323
 #: tasks/templates/task_import_js.html:232
 msgid "ukazat_maxball"
 msgstr "Укажите максимальный балл."
 
-#: tasks/templates/task_create_or_edit_js.html:319
-#: tasks/templates/task_create_or_edit_js.html:321
+#: tasks/templates/task_create_or_edit_js.html:324
+#: tasks/templates/task_create_or_edit_js.html:326
 #: tasks/templates/task_import_js.html:233
 #: tasks/templates/task_import_js.html:235
 msgid "maxball_naturalnoe_chislo"
 msgstr "Максимальный балл должен быть выражен натуральным числом."
 
-#: tasks/templates/task_create_or_edit_js.html:320
+#: tasks/templates/task_create_or_edit_js.html:325
 #: tasks/templates/task_import_js.html:234
 msgid "maxball_bolshe_0"
 msgstr "Максимальный балл должен быть больше или равен 0."
 
-#: tasks/templates/task_create_or_edit_js.html:324
+#: tasks/templates/task_create_or_edit_js.html:329
 msgid "nazvanie_neobhodimo"
 msgstr "Укажите название задачи."
 
-#: tasks/templates/task_create_or_edit_js.html:331
+#: tasks/templates/task_create_or_edit_js.html:336
 #: tasks/templates/task_import_js.html:238
 msgid "ukazat_nomer_kontesta"
 msgstr "Укажите номер задачи."
 
-#: tasks/templates/task_create_or_edit_js.html:332
+#: tasks/templates/task_create_or_edit_js.html:337
 #: tasks/templates/task_import_js.html:239
 #: tasks/templates/task_import_js.html:240
 msgid "nomer_kontesta_naturalnoe_chislo"
 msgstr "Номер соревнования должен быть выражен натуральным числом."
 
-#: tasks/templates/task_create_or_edit_js.html:335
+#: tasks/templates/task_create_or_edit_js.html:340
 msgid "ukazat_literu_zadachi"
 msgstr "Укажите литеру задачи."
 
-#: tasks/templates/task_create_or_edit_js.html:341
+#: tasks/templates/task_create_or_edit_js.html:346
 #, fuzzy
 msgid "assignment_name_is_required"
 msgstr "Название задачи в jupyter"
+
+#: tasks/templates/task_create_or_edit_js.html:347
+msgid "assignment name cannot contains spaces"
+msgstr ""
 
 #: tasks/templates/task_edit.html:188
 msgid "vybor_grupp_zavisit_ot_zadach"

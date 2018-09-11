@@ -1963,9 +1963,8 @@ msgid "ukazat_literu_zadachi"
 msgstr "Укажите литеру задачи."
 
 #: tasks/templates/task_create_or_edit_js.html:346
-#, fuzzy
 msgid "assignment name is required"
-msgstr "Название задачи в jupyter"
+msgstr "Укажите название задачи для jupyter"
 
 #: tasks/templates/task_create_or_edit_js.html:347
 msgid "assignment name cannot contains spaces"

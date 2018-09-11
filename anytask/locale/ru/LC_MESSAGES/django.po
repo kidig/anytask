@@ -1964,7 +1964,7 @@ msgstr "Укажите литеру задачи."
 
 #: tasks/templates/task_create_or_edit_js.html:346
 #, fuzzy
-msgid "assignment_name_is_required"
+msgid "assignment name is required"
 msgstr "Название задачи в jupyter"
 
 #: tasks/templates/task_create_or_edit_js.html:347

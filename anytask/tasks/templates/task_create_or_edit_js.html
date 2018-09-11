@@ -224,6 +224,10 @@
             return !!value;
         });
 
+        $.validator.addMethod("nospaces", function(value, element) {
+            return this.optional(element) || !/\s/.test(value);
+        });
+
         var form_validator = $('#task_edit_form').validate({
             submitHandler: function (form) {
                 var $task_edit_form = $(form);
@@ -298,7 +302,8 @@
                     required_with_disabled: true
                 },
                 'nb_assignment_name': {
-                    required: true
+                    required: true,
+                    nospaces: true
                 }
             },
 
@@ -338,7 +343,8 @@
                     required_with_disabled: "{% trans 'neobhodimo_vybrat_gruppu' %}"
                 },
                 nb_assignment_name: {
-                    required: "{% trans 'assignment_name_is_required' %}"
+                    required: "{% trans 'assignment_name_is_required' %}",
+                    nospaces: "{% trans 'assignment name cannot contains spaces' %}"
                 }
             },
 

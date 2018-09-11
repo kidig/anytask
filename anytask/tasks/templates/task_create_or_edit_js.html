@@ -303,7 +303,8 @@
                 },
                 'nb_assignment_name': {
                     required: true,
-                    nbassignment: true
+                    nbassignment: true,
+                    remote: '/task/validate/nb_assignment_name'
                 }
             },
 
@@ -344,7 +345,8 @@
                 },
                 nb_assignment_name: {
                     required: "{% trans 'assignment name is required' %}",
-                    nbassignment: "{% trans 'assignment name cannot contains spaces' %}"
+                    nbassignment: "{% trans 'assignment name cannot contains spaces' %}",
+                    remote: "{% trans 'assignment name already in use' %}"
                 }
             },
 

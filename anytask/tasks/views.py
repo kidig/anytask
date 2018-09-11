@@ -10,7 +10,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
@@ -469,3 +469,18 @@ def get_task_text_popup(request, task_id):
     }
 
     return render_to_response('task_text_popup.html', context, context_instance=RequestContext(request))
+
+
+@login_required
+def validate_nb_assignment_name(request):
+    if request.method == 'POST':
+        return HttpResponseBadRequest()
+
+    name = request.GET['nb_assignment_name']
+    task_exists = Task.objects.filter(nb_assignment_name=name).exists()
+    if not task_exists:
+        return HttpResponse(json.dumps(True))
+    # else:
+    #     return HttpResponse(_('Assignment {} already exists'.format(name)))
+
+    return HttpResponse(json.dumps(False))

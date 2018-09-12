@@ -217,7 +217,7 @@ def get_task_params(request, check_score_after_deadline=False):
     hidden_task = 'hidden_task' in request.POST
     task_text = request.POST.get('task_text', '').strip()
 
-    nb_assignment_name = request.POST.get('nb_assignment_name', '')
+    nb_assignment_name = request.POST.get('nb_assignment_name')
 
     return {'attrs': {
         'updated_by': user,

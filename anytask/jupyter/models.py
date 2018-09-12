@@ -19,7 +19,7 @@ def get_assignment_name(instance):
 def create_nbgrader_assignment(sender, instance, created, **kwargs):
     logger.info('create nbgrader assignment for task: %s', instance)
 
-    if not instance.type == Task.TYPE_IPYNB:
+    if not created or not instance.type == Task.TYPE_IPYNB:
         return
 
     assignment = get_or_create_assignment(name=instance.nb_assignment_name)

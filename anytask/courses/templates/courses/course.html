@@ -188,10 +188,14 @@
                                             {% if not task.is_hidden and task.type != task.TYPE_MATERIAL %}
                                                 <div class="tasks-list">
                                                     <div style="width: 40%;">
+                                                        {% if task.task_text %}
                                                         <a data-toggle="collapse" aria-expanded="false"
                                                            aria-controls="collapse_{{ task.id }}"
                                                            href="#collapse_{{ task.id }}">
                                                             {% get_text_from_json task 'get_title' LANGUAGE_CODE %}</a>
+                                                        {% else %}
+                                                        <span>{% get_text_from_json task 'get_title' LANGUAGE_CODE %}</span>
+                                                        {% endif %}
                                                     </div>
                                                     <div style="width: 10%">
                                                         {{ task|get_score:user }}
@@ -224,6 +228,7 @@
                                                         {% endif %}
                                                     </div>
                                                 </div>
+                                                {% if task.task_text %}
                                                 <div id="collapse_{{ task.id }}" class="collapse">
                                                     <div style="width: 100%" style="border-top: 0;">
                                                         <p class="card-text">
@@ -231,6 +236,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
+                                                {% endif %}
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -436,10 +442,14 @@
                                             {% if not task.is_hidden and task.type == task.TYPE_MATERIAL %}
                                                 <div class="tasks-list">
                                                     <div style="width: 65%;">
+                                                        {%  if task.task_text %}
                                                         <a data-toggle="collapse" aria-expanded="false"
                                                            aria-controls="collapse_{{ task.id }}"
                                                            href="#collapse_{{ task.id }}">
                                                            {% get_text_from_json task 'get_title' LANGUAGE_CODE %}</a>
+                                                        {% else %}
+                                                        <span>{% get_text_from_json task 'get_title' LANGUAGE_CODE %}</span>
+                                                        {% endif %}
                                                     </div>
                                                     <div style="width: 20%">
                                                         {% if task.deadline_time %}{% trans "sdat_do" %}

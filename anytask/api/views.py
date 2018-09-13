@@ -12,6 +12,7 @@ from django.views.decorators.http import require_http_methods
 
 from courses.models import Course
 from issues.models import Issue
+from users.models import UserProfile
 
 ISSUE_FILTER = {
     'student': 'student__username',
@@ -265,3 +266,25 @@ def get_issue_statuses(request, course_id):
 
     return HttpResponse(json.dumps(ret),
                         content_type="application/json")
+
+
+@require_http_methods(['GET'])
+def check_user(request):
+    ya_login = request.GET.get('ya_login')
+    if not ya_login:
+        return HttpResponseBadRequest()
+
+    try:
+        profile = UserProfile.objects.get(ya_passport_login=ya_login)
+    except UserProfile.DoesNotExist:
+        return HttpResponseBadRequest('No profile found')
+
+    user = profile.user
+
+    return HttpResponse(json.dumps({
+        'id': user.id,
+        'ya_passport_login': ya_login,
+        'active': user.is_active,
+        'is_staff': user.is_staff or user.is_superuser,
+        'is_teacher': user.course_teachers_set.exists(),
+    }), content_type="application/json")

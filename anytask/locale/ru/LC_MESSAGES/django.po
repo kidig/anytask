@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 11:27+0300\n"
+"POT-Creation-Date: 2018-09-13 18:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,15 +153,15 @@ msgstr "Очистить"
 msgid "primenit"
 msgstr "Применить"
 
-#: courses/views.py:841 courses/views.py:853 tasks/views.py:364
+#: courses/views.py:841 courses/views.py:853 tasks/views.py:365
 msgid "kontesta_ne_sushestvuet"
 msgstr "Такого соревнования не существует"
 
-#: courses/views.py:843 courses/views.py:855 tasks/views.py:366
+#: courses/views.py:843 courses/views.py:855 tasks/views.py:367
 msgid "oshibka_kontesta"
 msgstr "Ошибка Я.Контеста:"
 
-#: courses/views.py:851 tasks/views.py:354 tasks/views.py:439
+#: courses/views.py:851 tasks/views.py:355 tasks/views.py:440
 msgid "net_prav_na_kontest"
 msgstr "У Anytask нет прав на данное соревнование"
 
@@ -209,12 +209,12 @@ msgstr "Настройки"
 
 #: courses/templates/course_tasks_potok.html:143
 #: courses/templates/course_tasks_potok.html:167
-#: courses/templates/courses/course.html:213
 #: courses/templates/courses/course.html:217
-#: courses/templates/courses/course.html:339
-#: courses/templates/courses/course.html:344
-#: courses/templates/courses/course.html:536
-#: courses/templates/courses/course.html:541
+#: courses/templates/courses/course.html:221
+#: courses/templates/courses/course.html:345
+#: courses/templates/courses/course.html:350
+#: courses/templates/courses/course.html:546
+#: courses/templates/courses/course.html:551
 msgid "sdat"
 msgstr "Сдать"
 
@@ -257,7 +257,7 @@ msgid "poseshennye_uroki"
 msgstr "Посещенные занятия"
 
 #: courses/templates/courses/course.html:46
-#: courses/templates/courses/course.html:257
+#: courses/templates/courses/course.html:263
 #: courses/templates/courses/gradebook.html:44
 #: courses/templates/courses/queue.html:36
 #: courses/templates/courses/settings.html:42
@@ -306,7 +306,7 @@ msgid "spisok_grupp_i_zadach"
 msgstr "Список групп и задач"
 
 #: courses/templates/courses/course.html:120
-#: courses/templates/courses/course.html:419
+#: courses/templates/courses/course.html:425
 msgid "materials"
 msgstr "Материалы"
 
@@ -327,21 +327,21 @@ msgstr "Импорт задачи из Яндекс.Контеста"
 msgid "import_sorevnovanija"
 msgstr "Импорт соревнования из Я.Контеста"
 
-#: courses/templates/courses/course.html:205
-#: courses/templates/courses/course.html:283
-#: courses/templates/courses/course.html:331
-#: courses/templates/courses/course.html:395
-#: courses/templates/courses/course.html:445
-#: courses/templates/courses/course.html:528
+#: courses/templates/courses/course.html:209
+#: courses/templates/courses/course.html:289
+#: courses/templates/courses/course.html:337
+#: courses/templates/courses/course.html:401
+#: courses/templates/courses/course.html:455
+#: courses/templates/courses/course.html:538
 msgid "sdat_do"
 msgstr "сдать до"
 
-#: courses/templates/courses/course.html:223
-#: courses/templates/courses/course.html:293
+#: courses/templates/courses/course.html:227
 #: courses/templates/courses/course.html:299
-#: courses/templates/courses/course.html:405
-#: courses/templates/courses/course.html:504
-#: courses/templates/courses/course.html:595
+#: courses/templates/courses/course.html:305
+#: courses/templates/courses/course.html:411
+#: courses/templates/courses/course.html:514
+#: courses/templates/courses/course.html:605
 #: courses/templates/courses/queue_js.html:143
 #: issues/templates/email_issue_notification.html:250
 #: issues/templates/email_issue_notification.txt:6
@@ -349,18 +349,18 @@ msgstr "сдать до"
 msgid "perejti"
 msgstr "Перейти"
 
-#: courses/templates/courses/course.html:262
-#: courses/templates/courses/course.html:375
-#: courses/templates/courses/course.html:481
-#: courses/templates/courses/course.html:572
+#: courses/templates/courses/course.html:268
+#: courses/templates/courses/course.html:381
+#: courses/templates/courses/course.html:491
+#: courses/templates/courses/course.html:582
 msgid "vedomost"
 msgstr "Ведомость"
 
-#: courses/templates/courses/course.html:423 mail/templates/mail.html:208
+#: courses/templates/courses/course.html:429 mail/templates/mail.html:208
 msgid "dobavit"
 msgstr "Добавить"
 
-#: courses/templates/courses/course.html:423 tasks/models.py:67
+#: courses/templates/courses/course.html:429 tasks/models.py:67
 msgid "material"
 msgstr "материал"
 
@@ -523,7 +523,7 @@ msgstr "Удалённую задачу нельзя восстановить. �
 #: tasks/management/commands/send_task_notifications.py:82
 #: tasks/templates/contest_import.html:129 tasks/templates/task_create.html:128
 #: tasks/templates/task_create_or_edit_js.html:468
-#: tasks/templates/task_edit.html:202 tasks/templates/task_edit.html.py:417
+#: tasks/templates/task_edit.html:202 tasks/templates/task_edit.html.py:421
 #: tasks/templates/task_import.html:118 tasks/templates/task_import_js.html:418
 msgid "data_sdachi"
 msgstr "Дата сдачи"
@@ -639,7 +639,7 @@ msgstr "Значение по умолчанию"
 
 #: courses/templates/courses/settings.html:193
 #: tasks/templates/contest_import.html:159 tasks/templates/task_create.html:155
-#: tasks/templates/task_edit.html:268 tasks/templates/task_import.html:143
+#: tasks/templates/task_edit.html:272 tasks/templates/task_import.html:143
 msgid "otpravljat_tolko_odin_fajl"
 msgstr "Отправлять только один файл"
 
@@ -649,7 +649,7 @@ msgid "otobrazhat_nastrojku"
 msgstr "Отображать настройку"
 
 #: courses/templates/courses/settings.html:207
-#: tasks/templates/contest_import.html:169 tasks/templates/task_edit.html:283
+#: tasks/templates/contest_import.html:169 tasks/templates/task_edit.html:287
 #: tasks/templates/task_import.html:153
 msgid "perevodit_v_zachteno"
 msgstr "Переводить в статус «Зачтено» после положительного вердикта Я.Контеста"
@@ -683,7 +683,7 @@ msgid "obnovit_dannie_zadach"
 msgstr "Обновить название, максимальный балл, дату сдачи и условия задач"
 
 #: courses/templates/courses/settings.html:274
-#: tasks/templates/task_edit.html:429
+#: tasks/templates/task_edit.html:433
 msgid "obnovit"
 msgstr "Обновить"
 
@@ -695,12 +695,12 @@ msgstr "Расширения файлов"
 #: lessons/templates/lesson_create.html:135
 #: lessons/templates/lesson_edit.html:166
 #: tasks/templates/contest_import.html:202 tasks/templates/task_create.html:201
-#: tasks/templates/task_edit.html:354 tasks/templates/task_import.html:196
+#: tasks/templates/task_edit.html:358 tasks/templates/task_import.html:196
 msgid "otmenit_i_vyjti"
 msgstr "Отменить и выйти"
 
 #: courses/templates/courses/settings.html:306
-#: tasks/templates/task_create.html:202 tasks/templates/task_edit.html:355
+#: tasks/templates/task_create.html:202 tasks/templates/task_edit.html:359
 msgid "sohranit_i_prodolzhit"
 msgstr "Сохранить и продолжить редактирование"
 
@@ -708,7 +708,7 @@ msgstr "Сохранить и продолжить редактирование"
 #: lessons/templates/lesson_create.html:136
 #: lessons/templates/lesson_edit.html:167
 #: tasks/templates/contest_import.html:203 tasks/templates/task_create.html:203
-#: tasks/templates/task_edit.html:356 tasks/templates/task_import.html:197
+#: tasks/templates/task_edit.html:360 tasks/templates/task_import.html:197
 msgid "sohranit_i_vyjti"
 msgstr "Сохранить и выйти"
 
@@ -1086,21 +1086,30 @@ msgstr "Выберите компилятор"
 #, python-format
 msgid ""
 "\n"
-"            <p>Для решения данной задачи вам нужно перейти в <a href="
-"\"%(jupyterhub_url)s\" target=\"_blank\">JupyterHub</a>.</p>\n"
-"            <p>На вкладке Assignments нажать Fetch для задания '%(assignment_name_t)s'</"
-"p>\n"
-"        "
+"<p>For solving the task you need to go to <a href=\"%(jupyterhub_url_t)s\" "
+"target=\"_blank\">JupyterHub</a>.</p>\n"
+"<p>Open Assignments tab and fetch the '%(assignment_name_t)s'</p>\n"
 msgstr ""
+"\n"
+"<p>Для решения этой задачи необходимо перейти в <a href=\"%(jupyterhub_url_t)s\" "
+"target=\"_blank\">JupyterHub</a>.</p>\n"
+"<p>Открыть вкладку Assignments и выбрать операцию Fetch для задания '%(assignment_name_t)s'</p>\n"
 
 #: issues/templates/issues/history.html:51
+#, python-format
 msgid ""
 "\n"
-"        <p>Перед решением этой задачи вам необходимо привязать свой Яндекс аккаунт"
-".</p>\n"
-"        <p>Откройте <a href=\"/user/settings\">Настройки</a> и в блоке Привязка аккаунтов, авторизуйтесь через Яндекс.</p>\n"
-"        "
+"<p>Before solving this task you need to add your Yandex.Passport account.</"
+"p>\n"
+"<p>In User Menu go to <a href=\"%(settings_url)s\">Settings</a> and "
+"authorize via Yandex</p>\n"
 msgstr ""
+"\n"
+"<p>Перед решением данной задачи необходимо привязать ваш Яндекс аккаунт.</"
+"p>\n"
+"<p>Перейдите в <a href=\"%(settings_url)s\">Настройки</a> и "
+"добавьте свой Яндекс аккаунт</p>\n"
+
 
 #: issues/templates/issues/history.html:65
 msgid "predydushie_soobshenija"
@@ -1192,7 +1201,7 @@ msgstr "Редактирование занятия"
 #: lessons/templates/lesson_edit.html:70
 #: tasks/management/commands/send_task_notifications.py:79
 #: tasks/templates/task_create.html:61 tasks/templates/task_edit.html:154
-#: tasks/templates/task_edit.html.py:399
+#: tasks/templates/task_edit.html.py:403
 msgid "nazvanie"
 msgstr "Название"
 
@@ -1268,7 +1277,7 @@ msgstr "Описание занятия"
 
 #: lessons/templates/lesson_create.html:131
 #: lessons/templates/lesson_edit.html:162 tasks/templates/task_create.html:197
-#: tasks/templates/task_edit.html:350 tasks/templates/task_import.html:192
+#: tasks/templates/task_edit.html:354 tasks/templates/task_import.html:192
 msgid "predprosmotr"
 msgstr "Предпросмотр"
 
@@ -1789,14 +1798,14 @@ msgid "jupyter notebook"
 msgstr ""
 
 #: tasks/management/commands/send_task_notifications.py:80
-#: tasks/templates/task_create.html:188 tasks/templates/task_edit.html:341
-#: tasks/templates/task_edit.html.py:423 tasks/templates/task_import.html:183
+#: tasks/templates/task_create.html:188 tasks/templates/task_edit.html:345
+#: tasks/templates/task_edit.html.py:427 tasks/templates/task_import.html:183
 msgid "formulirovka"
 msgstr "Условие"
 
 #: tasks/management/commands/send_task_notifications.py:81
 #: tasks/templates/contest_import.html:91 tasks/templates/task_create.html:85
-#: tasks/templates/task_edit.html:178 tasks/templates/task_edit.html.py:411
+#: tasks/templates/task_edit.html:178 tasks/templates/task_edit.html.py:415
 #: tasks/templates/task_import.html:82
 msgid "max_ball"
 msgstr "Максимальный балл"
@@ -1809,7 +1818,7 @@ msgstr "произошли изменения в ваших курсах"
 msgid "import"
 msgstr "Импорт"
 
-#: tasks/templates/contest_import.html:64 tasks/templates/task_edit.html:239
+#: tasks/templates/contest_import.html:64 tasks/templates/task_edit.html:243
 #: tasks/templates/task_import.html:47
 msgid "id_kontesta"
 msgstr "ID соревнования"
@@ -1824,22 +1833,22 @@ msgid "brat_iz_kontesta"
 msgstr "Брать из Я.Контеста"
 
 #: tasks/templates/contest_import.html:116 tasks/templates/task_create.html:104
-#: tasks/templates/task_edit.html:305 tasks/templates/task_import.html:105
+#: tasks/templates/task_edit.html:309 tasks/templates/task_import.html:105
 msgid "roditelskaja_zadacha"
 msgstr "Родительская задача"
 
 #: tasks/templates/contest_import.html:152 tasks/templates/task_create.html:147
-#: tasks/templates/task_edit.html:261 tasks/templates/task_import.html:136
+#: tasks/templates/task_edit.html:265 tasks/templates/task_import.html:136
 msgid "integracija_s_rb"
 msgstr "Интеграция с Review Board"
 
 #: tasks/templates/contest_import.html:160 tasks/templates/task_create.html:156
-#: tasks/templates/task_edit.html:270 tasks/templates/task_import.html:144
+#: tasks/templates/task_edit.html:274 tasks/templates/task_import.html:144
 msgid "imja_fajla_budet_izmeneno"
 msgstr "Имя файла будет изменено на upload. Расширение не изменится."
 
 #: tasks/templates/contest_import.html:178 tasks/templates/task_create.html:173
-#: tasks/templates/task_edit.html:295 tasks/templates/task_import.html:162
+#: tasks/templates/task_edit.html:299 tasks/templates/task_import.html:162
 msgid "uchityvat_bally_dedlajn"
 msgstr "Учитывать баллы для задач, зачтенных после дедлайна"
 
@@ -1891,7 +1900,7 @@ msgid "tip_zadachi"
 msgstr "Тип задачи"
 
 #: tasks/templates/task_create.html:68 tasks/templates/task_edit.html:161
-#: tasks/templates/task_edit.html.py:405 tasks/templates/task_import.html:74
+#: tasks/templates/task_edit.html.py:409 tasks/templates/task_import.html:74
 msgid "kratkoe_nazvanie"
 msgstr "Краткое название"
 
@@ -1908,7 +1917,7 @@ msgstr "Название задачи в jupyter"
 msgid "must be unique for all tasks in jupyter"
 msgstr "Название должно быть уникальным"
 
-#: tasks/templates/task_create.html:117 tasks/templates/task_edit.html:318
+#: tasks/templates/task_create.html:117 tasks/templates/task_edit.html:322
 msgid "podzadachi"
 msgstr "Подзадачи"
 
@@ -1916,7 +1925,7 @@ msgstr "Подзадачи"
 msgid "uvedomit_o_sozdanii_zadachi"
 msgstr "Уведомить студентов о создании задачи"
 
-#: tasks/templates/task_create.html:182 tasks/templates/task_edit.html:335
+#: tasks/templates/task_create.html:182 tasks/templates/task_edit.html:339
 #: tasks/templates/task_import.html:177
 msgid "skryt_zadachu"
 msgstr "Скрыть задачу"
@@ -1980,27 +1989,27 @@ msgstr "задание с таким названием уже существу�
 msgid "vybor_grupp_zavisit_ot_zadach"
 msgstr "Из группы можно убрать только задачи, которые еще никто не сдавал."
 
-#: tasks/templates/task_edit.html:232
+#: tasks/templates/task_edit.html:236
 msgid "integracija_s_kontestom"
 msgstr "Интеграция с Яндекс.Контестом"
 
-#: tasks/templates/task_edit.html:246
+#: tasks/templates/task_edit.html:250
 msgid "litera_zadachi"
 msgstr "Литера задачи в соревновании"
 
-#: tasks/templates/task_edit.html:254 tasks/templates/task_edit.html.py:255
+#: tasks/templates/task_edit.html:258 tasks/templates/task_edit.html.py:259
 msgid "obnovit_iz_kontesta"
 msgstr "Обновить данные из Я.Контеста"
 
-#: tasks/templates/task_edit.html:329
+#: tasks/templates/task_edit.html:333
 msgid "uvedomit_ob_izmenenii_v_zadache"
 msgstr "Уведомить студентов об изменении задачи"
 
-#: tasks/templates/task_edit.html:385
+#: tasks/templates/task_edit.html:389
 msgid "obnovlenie_dannyh_iz_kontesta"
 msgstr "Обновление данных из Яндекс.Контеста"
 
-#: tasks/templates/task_edit.html:389
+#: tasks/templates/task_edit.html:393
 msgid "importirovat_polja_iz_kontesta"
 msgstr "Импортировать из Яндекс.Контеста следующие поля"
 

@@ -260,6 +260,7 @@ def task_create_or_edit(request, course, task_id=None):
             params['attrs']['title'] = json.dumps(task_title, ensure_ascii=False)
             params['attrs']['task_text'] = json.dumps(task_text, ensure_ascii=False)
         changed_score_after_deadline = task.score_after_deadline != params['attrs']['score_after_deadline']
+        params['attrs']['nb_assignment_name'] = task.nb_assignment_name
     else:
         task = Task()
         task.course = course

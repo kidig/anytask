@@ -225,7 +225,7 @@
         });
 
         $.validator.addMethod("nbassignment", function(value, element) {
-            return this.optional(element) || /^[a-z0-9\_-]+$/.test(value);
+            return this.optional(element) || /^[a-z0-9][a-z0-9\_-]*$/.test(value);
         });
 
         var form_validator = $('#task_edit_form').validate({

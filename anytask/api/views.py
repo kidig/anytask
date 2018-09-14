@@ -5,7 +5,7 @@ import json
 
 from django.conf import settings
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
@@ -277,7 +277,7 @@ def check_user(request):
     try:
         profile = UserProfile.objects.get(ya_passport_login=ya_login)
     except UserProfile.DoesNotExist:
-        return HttpResponseBadRequest('No profile found')
+        return HttpResponseNotFound('No profile found')
 
     user = profile.user
 

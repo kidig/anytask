@@ -24,7 +24,8 @@ def update_jupyter_task(request):
 
     assignment_id = request.POST.get('name')
     student_id = request.POST.get('student')
-    score = request.POST.get('score')
+    score = float(request.POST.get('score', 0))
+    max_score = float(request.POST.get('max_score', 0))
     timestamp = request.POST.get('timestamp')
     logger.debug('REQUEST: %r', request.POST)
 
@@ -44,9 +45,12 @@ def update_jupyter_task(request):
     issue, created = Issue.objects.get_or_create(task=task, student=profile.user)
     issue.set_status_accepted(user)
 
-    if score:
+    if score >= 0:
+        if max_score > 0 and max_score >= score:
+            score = float(score) / float(max_score) * task.score_max
+
         try:
-            issue.set_byname('mark', float(score))
+            issue.set_byname('mark', round(score, 2))
         except ValueError:
             return HttpResponse('Wrong score: {}'.format(score), status=400)
 
